@@ -42,10 +42,10 @@
                         <div class="col-6">${subject.title}</div>
                         <div class="col-1">${subject.credit}</div>
                         <div class="col-1">
-                            <input ${existSubjects[subject.subjectId] ? 'checked' : '' }
+                            <input ${exis[subject.subjectId] ? 'checked' : '' }
                                     type="checkbox" name="registeredSubjects" value="${subject.subjectId}">
 
-                        </div>
+                        </div>tSubjects
                     </div>
                 </c:forEach>
                 <hr>

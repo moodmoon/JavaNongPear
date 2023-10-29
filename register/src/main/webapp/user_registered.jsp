@@ -25,26 +25,44 @@
 
 
 <%-- เป็น Map ต้องวนลูป 2 ชั้น --%>
-<h1>Course Register History</h1><hr>
+<h1>Course Register History</h1>
+<hr>
 <c:set var="link" value="index.jsp"></c:set>
 <c:if test="${message != null}">
     <h2 style="color: mediumvioletred; background-color: tan">
-            ${message} <br><hr>
-        <a href="course-list"><button>OK</button></a>
+            ${message} <br>
+        <hr>
+        <a href="course-list">
+            <button>OK</button>
+        </a>
     </h2>
 </c:if>
 
 <c:if test="${message == null}">
     <c:forEach items="${courseRegistered.history}" var="entry">
         <h3 style="color: darkred;">
-            ${semesters[entry.key]}</h3>
+                ${semesters[entry.key]}</h3>
         <c:forEach items="${entry.value}" var="subject" varStatus="vs">
             ${vs.count}) ${subject.subjectId} , ${subject.title} , ${subject.credit}<br>
         </c:forEach>
         <br>
     </c:forEach>
     <hr>
-    <a href="${link}"><button>OK</button></a>
+    <a href="${link}">
+        <button>OK</button>
+    </a>
 </c:if>
+
+<%--       แบบมองง่าย ๆ ไม่เน้นสวย       --%>
+<c:forEach items="${courseRegistered.history}" var="entry">
+    <h3>Semester ${entry.key}</h3>
+    <hr>
+    <c:forEach items="${entry.value}" var="subject">
+        ${subject.subjectId}, ${subject.title}, ${subject.credit}
+        <br>
+    </c:forEach>
+    ----------------------------<br><br>
+</c:forEach>
+
 </body>
 </html>

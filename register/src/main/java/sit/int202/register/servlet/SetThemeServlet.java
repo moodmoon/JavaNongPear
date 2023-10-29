@@ -20,6 +20,5 @@ public class SetThemeServlet extends HttpServlet {
         ck.setMaxAge(8*24*60*60); //ฝั่ง server
         response.addCookie(ck); //ฝั่ง browser
         response.sendRedirect("index.jsp");
-
     }
 }
