@@ -16,7 +16,7 @@ public class MultiplicationTableServlet extends HttpServlet {
         }
         request.getRequestDispatcher("/multiplication_table.jsp").forward(request,response);
     }
-    private  boolean isDigit(String nStr){
+    private static boolean isDigit(String nStr){
         for(int i = 0; i < nStr.length(); i++) {
             if(! Character.isDigit(nStr.charAt(i))){
                 return false;

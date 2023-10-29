@@ -25,6 +25,7 @@ public class SubjectRepository {
         subjects.add(new Subject("GEN 121", "Learning and Problem Solving Skills", 3));
         subjects.add(new Subject("INT 100", "IT Fundamentals", 3));
         subjects.add(new Subject("INT 207", "Network I", 3));
+
     }
 }
 

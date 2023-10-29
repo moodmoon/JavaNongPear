@@ -18,9 +18,20 @@
     <table style="border: 1px solid darkblue; text-align: right">
         <tr style="background-color: darkgray">
             <td colspan="5">${param.number}</td>
-    </tr>
+        </tr>
     <c:forEach begin="1" end="12" var="n">
-        <tr>
+        <c:choose>
+            <c:when test="${n%3 == 1}">
+                <c:set var="bg" scope="page" value="white"></c:set>
+            </c:when>
+            <c:when test="${n%3 == 2}">
+                <c:set var="bg" scope="page" value="lightgray"></c:set>
+            </c:when>
+            <c:otherwise>
+                <c:set var="bg" scope="page" value="white"></c:set>
+            </c:otherwise>
+        </c:choose>
+        <tr style="background-color: ${bg}">
             <td style="border-bottom: 1px solid aliceblue">${param.number}</td>
             <td style="border-bottom: 1px solid aliceblue"> x </td>
             <td style="border-bottom: 1px solid aliceblue"> ${n} </td>
