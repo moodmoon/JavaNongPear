@@ -1,5 +1,5 @@
 ### JPA MVC
-* version : Jakata EE 9
+* Version : Jakata EE 9
 * Dependencie :
 - Specifications : 
     - Servlet
